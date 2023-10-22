@@ -40,7 +40,7 @@ func GetDetails(name string) KitsuData {
     err = json.NewDecoder(response.Body).Decode(&data)
     if err != nil {
         fmt.Println(err)
-        fmt.Println("Failed to decode response")
+        fmt.Println("Failed to decode kitsu details response")
     }
 
     fmt.Println("Found:", data.Data[0].ID)

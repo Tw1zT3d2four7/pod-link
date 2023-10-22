@@ -42,7 +42,7 @@ func GetDetails(id string) Tv {
     err = json.NewDecoder(response.Body).Decode(&data)
     if err != nil {
         fmt.Println(err)
-        fmt.Println("Failed to decode response")
+        fmt.Println("Failed to decode overseerr details response")
     }
 
     return data

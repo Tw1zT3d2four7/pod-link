@@ -32,7 +32,7 @@ func GetList(KitsuId string, Episode int) []torrentio.Stream {
 	err = json.NewDecoder(response.Body).Decode(&data)
 	if err != nil {
 		fmt.Println(err)
-		fmt.Println("Failed to decode response")
+		fmt.Println("Failed to decode torrentio list response")
 	}
 
 	return torrentio.FilterResults(data.Streams)

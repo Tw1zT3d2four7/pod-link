@@ -41,7 +41,7 @@ func GetDetails(id string) Movie {
     err = json.NewDecoder(response.Body).Decode(&details)
     if err != nil {
         fmt.Println(err)
-        fmt.Println("Failed to decode response")
+        fmt.Println("Failed to decode overseerr details response")
     }
 
     return details

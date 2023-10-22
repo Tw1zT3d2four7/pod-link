@@ -42,7 +42,7 @@ func AddMagnet(magnet string) error {
 	var data AddMagnetResponse
 	err = json.NewDecoder(response.Body).Decode(&data)
 	if err != nil {
-		fmt.Println("Failed to decode response")
+		fmt.Println("Failed to decode addmagnet response")
 		return err
 	}
 
