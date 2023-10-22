@@ -8,6 +8,8 @@ import (
 )
 
 func GetList(ImdbId string) []torrentio.Stream {
+    fmt.Println("Getting list for:", ImdbId)
+
     filter := "sort=qualitysize%7Cqualityfilter=other,scr,cam,unknown"
     url := fmt.Sprintf("https://torrentio.strem.fun/%s/stream/movie/%s.json", filter, ImdbId)
 

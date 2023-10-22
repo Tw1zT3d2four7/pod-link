@@ -17,6 +17,8 @@ func GetDetails(id string) Movie {
     host := os.Getenv("OVERSEERR_HOST")
     token := os.Getenv("OVERSEERR_TOKEN")
 
+    fmt.Println("Getting details for:", id)
+
     url := fmt.Sprintf("%s/api/v1/movie/%s", host, id)
 
     req, err := http.NewRequest("GET", url, nil)

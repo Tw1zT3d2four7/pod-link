@@ -44,6 +44,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
     switch requestData.NotificationType {
     case "MEDIA_AUTO_APPROVED":
+        fmt.Println("MEDIA_AUTO_APPROVED")
         var mediaAutoApprovedNotification structs.MediaAutoApprovedNotification
 
         err = json.Unmarshal(body, &mediaAutoApprovedNotification)
