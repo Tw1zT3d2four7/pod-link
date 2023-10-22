@@ -1,10 +1,11 @@
 package movies
 
 import (
-    "encoding/json"
-    "fmt"
-    "net/http"
-    "os"
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
 )
 
 type OverseerrResponse struct {
@@ -42,6 +43,14 @@ func GetDetails(id string) Movie {
     var details Movie
     err = json.NewDecoder(response.Body).Decode(&details)
     if err != nil {
+        body, err := io.ReadAll(response.Body)
+        if err != nil {
+            fmt.Println(err)
+            fmt.Println("Failed to read response body")
+        }
+
+        fmt.Println(string(body))
+
         fmt.Println(err)
         fmt.Println("Failed to decode overseerr details response")
     }
